@@ -69,6 +69,9 @@ function hello(){
   console.log('hello!')
 }
 
+/** lists all the possible commands 
+ * @returns {void}
+*/
 function help(){
   console.log('hello\nquit\nexit',)
 }
