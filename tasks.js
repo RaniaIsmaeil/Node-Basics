@@ -1,4 +1,3 @@
-
 /**
  * Starts the application
  * This is the function that is run when the app starts
@@ -9,7 +8,7 @@
  * @param  {string} name the name of the app
  * @returns {void}
  */
-function startApp(name){
+ function startApp(name){
   process.stdin.resume();
   process.stdin.setEncoding('utf8');
   process.stdin.on('data', onDataReceived);
@@ -37,7 +36,7 @@ function onDataReceived(text) {
   if (text === 'quit\n' || text === 'exit\n') {
     quit();
   }
-  else if(text.match(/hello/)){
+  else if(text.slice(0,5)=== "hello"){
     hello(text);
   }
   else if(text === 'help\n'){
@@ -66,7 +65,7 @@ function unknownCommand(c){
  * @returns {void}
  */
 function hello(text){
-  console.log(text)
+  console.log(text.trim() + '!');
 }
 
 /** lists all the possible commands 
