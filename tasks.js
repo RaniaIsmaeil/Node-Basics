@@ -124,8 +124,11 @@ function remove(text){
   else if(text == "2"){
     arraylist.splice(1,1);
     }
+    else{
+      console.log("You entered a number greater than length of the list");
+    }}
   }
-}
+
 
 // The following line starts the application
 startApp("Rania Ismaeil")
