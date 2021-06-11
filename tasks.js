@@ -111,26 +111,20 @@ let arraylist= ["Task1", " Task2", " Task3"]
   }
   
 
-function add (text){
+  function add (text){
 arraylist.push(text);
   
 }
-function remove(text){
-  text = text.trim();
-  if(text<=arraylist.length){
-       if(text == ""){
-          arraylist.pop();
+
+  function remove(text) {
+  if (arraylist.length <= text) {
+    console.log("Error. You entered a number greater than length of the list");
+  } 
+  else {
+    arraylist.splice(text + 1, 1);
   }
-  else if(text == "1"){
-    arraylist.shift();
-  }
-  else if(text == "2"){
-    arraylist.splice(1,1);
-    }
-    else{
-      console.log("Error. You entered a number greater than length of the list");
-    }}
-  }
+
+
   function edit(text){
     if(text == ""){
       console.log("Error. You can't edit anything");
@@ -143,6 +137,6 @@ function remove(text){
         arraylist.pop();
         arraylist.push(text);
     }
-  }
+  }}
 // The following line starts the application
 startApp("Rania Ismaeil")
