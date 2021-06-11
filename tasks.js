@@ -48,7 +48,9 @@ function onDataReceived(text) {
   else if (text.split(' ')[0].trim() === 'add'){
     add(text.split(' ')[1]);
   }
- 
+  else if(text.slice(0,6)==='remove'){
+    remove(text.slice(6));
+  }
   else{
     unknownCommand(text);
   }
@@ -79,7 +81,7 @@ function hello(text){
  * @returns {void}
 */
 function help(){
-  console.log('\npossible command lines : \nhello --> says hello!\nhello (your text) --> says hello (your text)!\nquit --> quits the application\nexit --> exits the application',)
+  console.log('\npossible command lines : \nhello --> says hello!\nhello (your text) --> says hello (your text)!\nquit --> quits the application\nexit --> exits the application\nlist --> shows a list of tasks\nadd --> allows to add tasks\nremove --> allows to remove tasks',)
 }
 
 /**
@@ -110,7 +112,20 @@ function add (text){
 arraylist.push(text);
   
 }
+function remove(text){
+  text = text.trim();
+  if(text<=arraylist.length){
+       if(text == ""){
+          arraylist.pop();
+  }
+  else if(text == "1"){
+    arraylist.shift();
+  }
+  else if(text == "2"){
+    arraylist.splice(1,1);
+    }
+  }
+}
 
 // The following line starts the application
 startApp("Rania Ismaeil")
-
