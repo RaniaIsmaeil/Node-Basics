@@ -45,6 +45,10 @@ function onDataReceived(text) {
   else if(text === 'list\n'){
     list();
   }
+  else if (text.split(' ')[0].trim() === 'add'){
+    add(text.split(' ')[1]);
+  }
+ 
   else{
     unknownCommand(text);
   }
@@ -87,9 +91,26 @@ function quit(){
   console.log('Quitting now, goodbye!')
   process.exit();
 }
-function list (){
-  console.log('\nList of Tasks:\nTask one\nTask two\nTask three\n');
+
+function add (text){
+  console.log(text.trim() + 'x');
+}
+
+let arraylist= ["Task1", " Task2", " Task3"]
+
+ function list(){
+
+  let x = arraylist.map(x => x+"\n")
+  let y = x.toString().split(",").join("").trim()
+  console.log("\nList of Tasks:\n",y)
+  }
+  
+
+function add (text){
+arraylist.push(text);
+  
 }
 
 // The following line starts the application
 startApp("Rania Ismaeil")
+
