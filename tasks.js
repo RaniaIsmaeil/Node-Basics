@@ -72,7 +72,7 @@ function hello(text){
  * @returns {void}
 */
 function help(){
-  console.log('hello\nquit\nexit',)
+  console.log('\npossible command lines : \nhello --> says hello!\nhello (your text) --> says hello (your text)!\nquit --> quits the application\nexit --> exits the application',)
 }
 
 /**
