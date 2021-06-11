@@ -48,8 +48,11 @@ function onDataReceived(text) {
   else if (text.split(' ')[0].trim() === 'add'){
     add(text.split(' ')[1]);
   }
-  else if(text.slice(0,6)==='remove'){
+  else if(text.slice(0,6) === 'remove'){
     remove(text.slice(6));
+  }
+  else if(text.slice(0,4) === 'edit'){
+    edit(text.slice(5));
   }
   else{
     unknownCommand(text);
@@ -125,10 +128,21 @@ function remove(text){
     arraylist.splice(1,1);
     }
     else{
-      console.log("You entered a number greater than length of the list");
+      console.log("Error. You entered a number greater than length of the list");
     }}
   }
-
-
+  function edit(text){
+    if(text == ""){
+      console.log("Error. You can't edit anything");
+    }
+    else if(text.charAt(0) == parseInt('1')){
+      var tex=text.slice(2);
+      arraylist.splice(0,2,text);
+    }
+    else if(typeof text.charAt(0) === "string"){
+        arraylist.pop();
+        arraylist.push(text);
+    }
+  }
 // The following line starts the application
 startApp("Rania Ismaeil")
