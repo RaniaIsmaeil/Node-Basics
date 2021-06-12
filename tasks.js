@@ -15,8 +15,6 @@
   console.log(`Welcome to ${name}'s application!`)
   console.log("--------------------")
 }
-
-
 /**
  * Decides what to do depending on the data that was received
  * This function receives the input sent by the user.
@@ -59,6 +57,8 @@ function onDataReceived(text) {
   }
 }
 
+
+
 /**
  * prints "unknown command"
  * This function is supposed to run when all other commands have failed
@@ -80,12 +80,14 @@ function hello(text){
   console.log(text.trim() + '!');
 }
 
+
 /** lists all the possible commands 
  * @returns {void}
 */
 function help(){
   console.log('\npossible command lines : \nhello --> says hello!\nhello (your text) --> says hello (your text)!\nquit --> quits the application\nexit --> exits the application\nlist --> shows a list of tasks\nadd --> allows to add tasks\nremove --> allows to remove tasks\nedit --> edits the task',)
 }
+
 
 /**
  * Exits the application
@@ -97,27 +99,33 @@ function quit(){
   process.exit();
 }
 
+
 function add (text){
   console.log(text.trim() + 'x');
 }
 
+
 let arraylist= ["Task1", " Task2", " Task3"]
 done = [true, false];
 function list() {
-  for (var i = 0; i < arraylist.length; i++) {
-    if (done[i] == true) {
-      console.log(i + 1 + " - " + "[✓] " + arraylist[i]);
+    for (var i = 0; i < arraylist.length; i++) {
+    if  (done[i] == true) {
+        console.log(i + 1 + " - " + "[✓] " + arraylist[i]);
     }
-    else {
-      console.log(i + 1 + " - " + "[ ] " + arraylist[i]);
+        else {
+        console.log(i + 1 + " - " + "[ ] " + arraylist[i]);
     }
   }
 }
 
+
+
   function add (text){
 arraylist.push(text);
-  
 }
+
+
+
   function remove(text) {
   if (arraylist.length <= text) {
     console.log("Error. You entered a number greater than length of the list");
@@ -126,6 +134,8 @@ arraylist.push(text);
     arraylist.splice(text + 1, 1);
   }
   }
+
+
   function edit (text){
     if(text == ""){
       console.log("Error. You can't edit anything");
@@ -139,6 +149,7 @@ arraylist.push(text);
         arraylist.push(text);
     }
   }
+  
 // The following line starts the application
 
 startApp("Rania Ismaeil")
