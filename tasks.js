@@ -51,7 +51,7 @@ function onDataReceived(text) {
   else if(text.slice(0,6) === 'remove'){
     remove(text.slice(6));
   }
-  else if(text.slice(0,4) === 'edit'){
+  else if(text.slice(0,4)==='edit'){
     edit(text.slice(5));
   }
   else{
@@ -84,7 +84,7 @@ function hello(text){
  * @returns {void}
 */
 function help(){
-  console.log('\npossible command lines : \nhello --> says hello!\nhello (your text) --> says hello (your text)!\nquit --> quits the application\nexit --> exits the application\nlist --> shows a list of tasks\nadd --> allows to add tasks\nremove --> allows to remove tasks',)
+  console.log('\npossible command lines : \nhello --> says hello!\nhello (your text) --> says hello (your text)!\nquit --> quits the application\nexit --> exits the application\nlist --> shows a list of tasks\nadd --> allows to add tasks\nremove --> allows to remove tasks\nedit --> edits the task',)
 }
 
 /**
@@ -102,20 +102,22 @@ function add (text){
 }
 
 let arraylist= ["Task1", " Task2", " Task3"]
-
- function list(){
-
-  let x = arraylist.map(x => x+"\n")
-  let y = x.toString().split(",").join("").trim()
-  console.log("\nList of Tasks:\n",y)
+done = [true, false];
+function list() {
+  for (var i = 0; i < arraylist.length; i++) {
+    if (done[i] == true) {
+      console.log(i + 1 + " - " + "[✓] " + arraylist[i]);
+    }
+    else {
+      console.log(i + 1 + " - " + "[ ] " + arraylist[i]);
+    }
   }
-  
+}
 
   function add (text){
 arraylist.push(text);
   
 }
-
   function remove(text) {
   if (arraylist.length <= text) {
     console.log("Error. You entered a number greater than length of the list");
@@ -123,20 +125,20 @@ arraylist.push(text);
   else {
     arraylist.splice(text + 1, 1);
   }
-
-
-  function edit(text){
+  }
+  function edit (text){
     if(text == ""){
       console.log("Error. You can't edit anything");
     }
     else if(text.charAt(0) == parseInt('1')){
       var tex=text.slice(2);
-      arraylist.splice(0,2,text);
+      arraylist.splice(0,1,text);
     }
     else if(typeof text.charAt(0) === "string"){
         arraylist.pop();
         arraylist.push(text);
     }
-  }}
+  }
 // The following line starts the application
+
 startApp("Rania Ismaeil")
