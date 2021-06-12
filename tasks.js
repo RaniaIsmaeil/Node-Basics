@@ -105,17 +105,12 @@ function add (text){
 }
 
 
-let arraylist= ["Task1", " Task2", " Task3"]
-done = [true, false];
-function list() {
-    for (var i = 0; i < arraylist.length; i++) {
-    if  (done[i] == true) {
-        console.log(i + 1 + " - " + "[✓] " + arraylist[i]);
-    }
-        else {
-        console.log(i + 1 + " - " + "[ ] " + arraylist[i]);
-    }
-  }
+// let arraylist= ["Task1", " Task2", " Task3"]
+var arrayList = [['[✓] ','1'],['[] ','2'],['[] ','3']];
+function list(){
+   let x = arrayList.map(x => x+"\n")
+   let y = x.toString().split(",").join("").trim()
+   console.log('To Do List:\n',y)
 }
 
 
@@ -153,3 +148,5 @@ arraylist.push(text);
 // The following line starts the application
 
 startApp("Rania Ismaeil")
+
+
